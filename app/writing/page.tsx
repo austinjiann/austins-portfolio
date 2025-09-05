@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import WindowCard from '@/components/WindowCard';
-import HeroText from '@/components/HeroText';
 
 export const metadata: Metadata = {
-  title: 'Austin Jian - About',
+  title: 'Austin Jian - Writing',
 };
 
-export default function AboutPage() {
+export default function WritingPage() {
   return (
     <main className="relative w-full min-h-dvh">
       <div className="fixed inset-x-0 top-0 z-20">
@@ -32,7 +31,14 @@ export default function AboutPage() {
           </div>
           <div className="relative z-10">
             <WindowCard>
-              <HeroText />
+              <div className="flex flex-col items-center justify-center min-h-[400px]">
+                <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
+                  Writing
+                </h1>
+                <p className="text-[#8B8B8B] text-lg">
+                  Coming soon...
+                </p>
+              </div>
             </WindowCard>
           </div>
         </div>
@@ -40,5 +46,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
-
