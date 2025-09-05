@@ -1,0 +1,18 @@
+---
+description: Desktop width convention for central cards (hero window, future cards)
+globs:
+  - "**/*.tsx"
+alwaysApply: true
+---
+
+# Width guideline
+
+- Use the Tailwind token `max-w-card` for all central cards on desktop.
+- Current desktop width is 820px (`max-w-card`). Adjust this token for global width changes.
+- Components should center with `mx-auto` and respect container padding (`px-6` and max page width `max-w-[1200px]`).
+
+Usage example:
+
+```tsx
+<div className="mx-auto w-full max-w-card">...</div>
+```
