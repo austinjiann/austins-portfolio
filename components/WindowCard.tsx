@@ -1,11 +1,23 @@
 "use client";
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect, useRef } from 'react';
 
 type WindowCardProps = PropsWithChildren<{
   className?: string;
 }>;
 
 export default function WindowCard({ className, children }: WindowCardProps) {
+  // Prevent repeated triggers by applying a cooldown after each animation
+  const isOnCooldownRef = useRef(false);
+  const cooldownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (cooldownTimeoutRef.current) {
+        clearTimeout(cooldownTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="relative mx-auto w-full max-w-card">
       {/* Thin backdrop behind the window card */}
@@ -18,9 +30,11 @@ export default function WindowCard({ className, children }: WindowCardProps) {
         onMouseEnter={(e) => {
           const shine = e.currentTarget.querySelector('.windowcard-shine') as HTMLElement | null;
           if (!shine) return;
-          // If already animating, ignore this hover to avoid retriggers/queues
-          if (shine.classList.contains('is-animating')) return;
+          // Block while animating or during cooldown window
+          if (shine.classList.contains('is-animating') || isOnCooldownRef.current) return;
+          // Start animation and immediately set cooldown; it will be released 5s after animation ends
           shine.classList.add('is-animating');
+          isOnCooldownRef.current = true;
         }}
         className={[
           'relative rounded-3xl shadow-hero-outer overflow-hidden',
@@ -34,6 +48,12 @@ export default function WindowCard({ className, children }: WindowCardProps) {
         className="windowcard-shine z-20 rounded-[40px]"
         onAnimationEnd={(e) => {
           e.currentTarget.classList.remove('is-animating');
+          if (cooldownTimeoutRef.current) {
+            clearTimeout(cooldownTimeoutRef.current);
+          }
+          cooldownTimeoutRef.current = setTimeout(() => {
+            isOnCooldownRef.current = false;
+          }, 5000);
         }}
       />
       {/* Fading outer white outline (stronger at top, fades towards bottom) */}
