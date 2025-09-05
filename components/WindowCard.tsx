@@ -1,3 +1,4 @@
+"use client";
 import { PropsWithChildren } from 'react';
 
 type WindowCardProps = PropsWithChildren<{
@@ -14,6 +15,13 @@ export default function WindowCard({ className, children }: WindowCardProps) {
       />
 
       <div
+        onMouseEnter={(e) => {
+          const shine = e.currentTarget.querySelector('.windowcard-shine') as HTMLElement | null;
+          if (!shine) return;
+          // If already animating, ignore this hover to avoid retriggers/queues
+          if (shine.classList.contains('is-animating')) return;
+          shine.classList.add('is-animating');
+        }}
         className={[
           'relative rounded-3xl shadow-hero-outer overflow-hidden',
           // Background surface
@@ -21,6 +29,13 @@ export default function WindowCard({ className, children }: WindowCardProps) {
           className ?? '',
         ].join(' ')}
       >
+      {/* Sweep shine animation overlay (triggered on hover) */}
+      <div
+        className="windowcard-shine z-20 rounded-[40px]"
+        onAnimationEnd={(e) => {
+          e.currentTarget.classList.remove('is-animating');
+        }}
+      />
       {/* Fading outer white outline (stronger at top, fades towards bottom) */}
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl z-30"
@@ -39,8 +54,8 @@ export default function WindowCard({ className, children }: WindowCardProps) {
           height: 'clamp(20px, 4vw, 38px)',
           background:
             [
-              // Brighter silver center with lighter gray edges
-              'linear-gradient(90deg, rgba(80,80,80,0.55) 0%, rgba(110,110,110,0.42) 16%, rgba(212,212,212,0.78) 50%, rgba(110,110,110,0.42) 84%, rgba(80,80,80,0.55) 100%)',
+              // Brighter silver center with slightly brighter silver edges
+              'linear-gradient(90deg, rgba(98,98,98,0.62) 0%, rgba(122,122,122,0.48) 16%, rgba(212,212,212,0.80) 50%, rgba(122,122,122,0.48) 84%, rgba(98,98,98,0.62) 100%)',
               'radial-gradient(600px 240px at 50% 0%, rgba(200,200,200,0.18) 0%, rgba(185,185,185,0.10) 42%, rgba(0,0,0,0.0) 70%)',
               'linear-gradient(to bottom, rgba(185,185,185,0.22), rgba(0,0,0,0.0) 56%)',
             ].join(', '),

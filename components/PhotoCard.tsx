@@ -6,9 +6,10 @@ type PhotoCardProps = {
   tilt?: 'left' | 'right' | 'none';
   tiltStrength?: 'default' | 'strong' | 'max';
   className?: string;
+  style?: React.CSSProperties;
 };
 
-export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength = 'default', className }: PhotoCardProps) {
+export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength = 'default', className, style }: PhotoCardProps) {
   const rotateDefault = tilt === 'left' ? '-rotate-3' : tilt === 'right' ? 'rotate-3' : '';
   const rotateStrong = tilt === 'left' ? '-rotate-6' : tilt === 'right' ? 'rotate-6' : '';
   const rotateMax = tilt === 'left' ? '-rotate-12' : tilt === 'right' ? 'rotate-12' : '';
@@ -19,7 +20,7 @@ export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength =
       'rounded-xl overflow-hidden',
       rotateClass,
       className ?? '',
-    ].join(' ')}>
+    ].join(' ')} style={style}>
       {/* Outer white stroke outline fading toward bottom to match window card */}
       <div
         className="pointer-events-none absolute inset-0 rounded-xl z-10"
