@@ -31,7 +31,7 @@ export default function ProjectsPage() {
           </div>
           <div className="relative z-10">
             <WindowCard>
-              <div className="flex flex-col items-center justify-center min-h-[400px]">
+              <div className="flex flex-col items-center justify-center h-full">
                 <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
                   Projects
                 </h1>
