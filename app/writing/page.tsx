@@ -4,6 +4,27 @@ import WindowCard from '@/components/WindowCard';
 
 export const metadata: Metadata = {
   title: 'Austin Jian - Writing',
+  description: 'Essays and notes by Austin Jian on engineering, product, and learning.',
+  openGraph: {
+    title: 'Austin Jian - Writing',
+    description:
+      'Essays and notes by Austin Jian on engineering, product, and learning.',
+    url: 'https://austinjian.com/writing',
+    images: [
+      {
+        url: '/photos/photo1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Austin Jian writing',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Austin Jian - Writing',
+    description:
+      'Essays and notes by Austin Jian on engineering, product, and learning.',
+    images: ['/photos/photo1.jpg'],
+  },
 };
 
 export default function WritingPage() {

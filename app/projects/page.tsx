@@ -4,6 +4,25 @@ import WindowCard from '@/components/WindowCard';
 
 export const metadata: Metadata = {
   title: 'Austin Jian - Projects',
+  description: 'Projects and experiments by Austin Jian: demos, prototypes, and shipped work.',
+  openGraph: {
+    title: 'Austin Jian - Projects',
+    description: 'Projects and experiments by Austin Jian: demos, prototypes, and shipped work.',
+    url: 'https://austinjian.com/projects',
+    images: [
+      {
+        url: '/photos/photo1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Austin Jian projects',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Austin Jian - Projects',
+    description: 'Projects and experiments by Austin Jian: demos, prototypes, and shipped work.',
+    images: ['/photos/photo1.jpg'],
+  },
 };
 
 export default function ProjectsPage() {
@@ -31,6 +50,9 @@ export default function ProjectsPage() {
           </div>
           <div className="relative z-10">
             <WindowCard>
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-20">
+                <div className="h-10 w-44 bg-white/5 border border-white/15 rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[30px] rounded-br-[30px]" />
+              </div>
               <div className="flex flex-col items-center justify-center h-full">
                 <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
                   Projects

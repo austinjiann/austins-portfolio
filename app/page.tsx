@@ -1,11 +1,8 @@
-import { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import WindowCard from '@/components/WindowCard';
 import HeroText from '@/components/HeroText';
 
-export const metadata: Metadata = {
-  title: 'Austin Jian - About',
-};
+// Inherit global SEO metadata from layout
 
 export default function AboutPage() {
   return (
