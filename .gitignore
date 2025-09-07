@@ -17,3 +17,10 @@ yarn-error.log*
 # Env
 .env*
 node_modules
+
+# Media (ignore large binaries)
+public/photos/*.mp4
+*.mp4
+*.mov
+*.avi
+*.mkv
