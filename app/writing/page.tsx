@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Austin Jian - Writing',
     description:
-      'Essays and notes by Austin Jian on engineering, product, and learning.',
-    url: 'https://austinjian.com/writing',
+      'Austin written works',
+    url: 'https://austinjian.ca/writing',
     images: [
       {
         url: '/photos/photo1.jpg',

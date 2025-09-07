@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Austin Jian - Projects',
     description: 'Projects and experiments by Austin Jian: demos, prototypes, and shipped work.',
-    url: 'https://austinjian.com/projects',
+    url: 'https://austinjian.ca/projects',
     images: [
       {
         url: '/photos/photo1.jpg',
