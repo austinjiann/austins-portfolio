@@ -19,9 +19,5 @@ yarn-error.log*
 .env.local
 node_modules
 
-# Media (ignore large binaries)
-public/photos/*.mp4
-*.mp4
-*.mov
-*.avi
-*.mkv
+# Media (ignore large binaries) — allow videos in public so they deploy
+# Remove broad video ignores so assets in /public are uploaded to Vercel
