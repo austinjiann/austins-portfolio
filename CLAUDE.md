@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Project Overvie
 
 This is a Next.js 14 TypeScript portfolio application featuring a dark-themed hero section with terminal-styled window cards. The app uses Tailwind CSS for styling with custom design tokens and responsive layouts.
 
