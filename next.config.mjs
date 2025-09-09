@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
