@@ -3,9 +3,11 @@ import { PropsWithChildren, useEffect, useRef } from 'react';
 
 type WindowCardProps = PropsWithChildren<{
   className?: string;
+  maxWidthClass?: string;
+  contentClassName?: string;
 }>;
 
-export default function WindowCard({ className, children }: WindowCardProps) {
+export default function WindowCard({ className, maxWidthClass, contentClassName, children }: WindowCardProps) {
   // Prevent repeated triggers by applying a cooldown after each animation
   const isOnCooldownRef = useRef(false);
   const cooldownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -19,7 +21,7 @@ export default function WindowCard({ className, children }: WindowCardProps) {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full max-w-card">
+    <div className={["relative mx-auto w-full", maxWidthClass ?? 'max-w-card'].join(' ')}>
       {/* Thin backdrop behind the window card */}
       <div
         className="pointer-events-none absolute -inset-[6px] rounded-[28px] bg-[#35383D] backdrop-blur-[1px] -z-10"
@@ -100,7 +102,10 @@ export default function WindowCard({ className, children }: WindowCardProps) {
       <div className="relative z-10 mt-3 mx-0 border-t border-white/12 rounded-none" />
 
         {/* Content */}
-        <div className="relative z-10 pt-8 pb-10 px-6 sm:px-8 md:px-10 lg:px-12 min-h-[360px] md:min-h-[420px] lg:min-h-[460px]">
+        <div className={[
+          'relative z-10',
+          contentClassName ?? 'pt-9 pb-12 px-6 sm:px-8 md:px-10 lg:px-12 min-h-[380px] md:min-h-[440px] lg:min-h-[480px]'
+        ].join(' ')}>
           {children}
         </div>
       </div>

@@ -49,17 +49,36 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="relative z-10">
-            <WindowCard>
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-20">
-                <div className="h-10 w-44 bg-white/5 border border-white/15 rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[30px] rounded-br-[30px]" />
+            <WindowCard className="mb-8" maxWidthClass="max-w-[740px]" contentClassName="pt-0 pb-8 px-0 h-[460px]">
+              {/* VIDEO */}
+              <div className="w-full h-[300px] bg-black rounded-b-[20px] overflow-hidden">
+                <video
+                  src="/photos/playcreate demo.mp4"
+                  className="w-full h-full object-cover pointer-events-none"
+                  style={{ objectPosition: 'center 70%', transform: 'scale(1.15)' }}
+                  autoPlay
+                  muted
+                  loop
+                  preload="metadata"
+                  playsInline
+                  disablePictureInPicture
+                  controlsList="nodownload noplaybackrate noremoteplayback"
+                />
               </div>
-              <div className="flex flex-col items-center justify-center h-full">
-                <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
-                  Projects
-                </h1>
-                <p className="text-[#8B8B8B] text-lg">
-                  Coming soon...
+
+              {/* PROJECT DESCRIPTION */}
+              <div className="px-6 pt-4">
+                <h2 className="text-lg sm:text-xl font-semibold text-white mb-2">PlayCreate</h2>
+                <p className="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">
+                  Coaching reinvented with AI.
                 </p>
+                
+                {/* TECHNOLOGY TAGS */}
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm">React</span>
+                  <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm">Next.js</span>
+                  <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm">TypeScript</span>
+                </div>
               </div>
             </WindowCard>
           </div>

@@ -16,7 +16,7 @@ export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength =
   const rotateClass = tiltStrength === 'max' ? rotateMax : tiltStrength === 'strong' ? rotateStrong : rotateDefault;
   return (
     <div className={[
-      'relative w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] md:w-[180px] md:h-[220px] lg:w-[200px] lg:h-[240px]',
+      'relative w-[120px] h-[160px] sm:w-[140px] sm:h-[180px] md:w-[160px] md:h-[200px] lg:w-[176px] lg:h-[216px]',
       'rounded-xl overflow-hidden',
       rotateClass,
       className ?? '',
@@ -41,7 +41,7 @@ export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength =
           fill
           priority={false}
           className="object-cover"
-          sizes="(max-width: 768px) 160px, 200px"
+          sizes="(max-width: 768px) 140px, 176px"
         />
       </div>
     </div>

@@ -28,7 +28,7 @@ const config: Config = {
         tightest2: '-0.01em',
       },
       maxWidth: {
-        card: '880px',
+        card: '760px',
       },
     },
   },

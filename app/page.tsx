@@ -28,7 +28,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="relative z-10">
-            <WindowCard>
+            <WindowCard className="mb-8" maxWidthClass="max-w-[740px]" contentClassName="pt-9 pb-8 px-6 sm:px-8 md:px-10 lg:px-12 h-[460px]">
               <HeroText />
             </WindowCard>
           </div>
@@ -37,5 +37,6 @@ export default function AboutPage() {
     </main>
   );
 }
+
 
 
