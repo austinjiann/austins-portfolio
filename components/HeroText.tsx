@@ -27,7 +27,7 @@ export default function HeroText() {
       {/* Description */}
       <div className="w-full relative" style={{ paddingLeft: 'clamp(7rem, 24vw, 22rem)' }}>
         {/* Photo cards cluster positioned to the left of details */}
-        <div className="absolute left-0 top-6 -translate-x-[26%] sm:-translate-x-[22%] md:-translate-x-[18%] lg:-translate-x-[16%] xl:-translate-x-[14%] 2xl:-translate-x-[12%] translate-y-[2px] sm:translate-y-[6px] md:translate-y-[10px] lg:translate-y-[14px] xl:translate-y-[18px] h-[220px] md:h-[260px] w-[340px] pointer-events-none">
+        <div className="absolute left-0 top-2 -translate-x-[26%] sm:-translate-x-[22%] md:-translate-x-[18%] lg:-translate-x-[16%] xl:-translate-x-[14%] 2xl:-translate-x-[12%] translate-y-[2px] sm:translate-y-[6px] md:translate-y-[10px] lg:translate-y-[14px] xl:translate-y-[18px] h-[220px] md:h-[260px] w-[340px] pointer-events-none">
           {/* Base (1920x1080) and MacBook 14" tuned positions via clamp + responsive tweaks */}
           <PhotoCard
             src="/photos/photo1.jpg"
@@ -56,7 +56,7 @@ export default function HeroText() {
             }}
           />
         </div>
-        <p className="text-left mt-4 text-[15px] sm:text-[17px] md:text-[19px] lg:text-[21px] text-white font-semibold">
+        <p className="text-left mt-2 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white font-semibold">
           cs @ <a href={LINKS.waterloo} target="_blank" rel="noopener noreferrer" className="link-underline">university of waterloo</a>
         </p>
         <p className="text-left mt-4 text-[13px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
@@ -70,7 +70,7 @@ export default function HeroText() {
           • SWE @<a href={LINKS.cyc} target="_blank" rel="noopener noreferrer" className="link-underline">Canadian Youth Champions</a><br />
           • Won $1,500 at <a href={LINKS.hackThe6ix} target="_blank" rel="noopener noreferrer" className="link-underline">Hack the 6ix</a><br />
           • Won first place and $1,000 at <a href={LINKS.hack404} target="_blank" rel="noopener noreferrer" className="link-underline">Hack404</a><br />
-          • Building everything in public on <a href={LINKS.twitter} target="_blank" rel="noopener noreferrer" className="link-underline">twitter </a>
+
         </p>
       </div>
     </div>

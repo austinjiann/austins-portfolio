@@ -51,7 +51,7 @@ export default function WritingPage() {
             />
           </div>
           <div className="relative z-10">
-            <WindowCard>
+            <WindowCard maxWidthClass="max-w-card" contentClassName="py-6 px-6 sm:px-8 md:px-10 lg:px-12 h-[clamp(360px,38vw,460px)] flex items-center">
               <div className="flex flex-col items-center justify-center h-full">
                 <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
                   Writing

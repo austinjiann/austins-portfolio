@@ -16,11 +16,15 @@ export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength =
   const rotateClass = tiltStrength === 'max' ? rotateMax : tiltStrength === 'strong' ? rotateStrong : rotateDefault;
   return (
     <div className={[
-      'relative w-[120px] h-[160px] sm:w-[140px] sm:h-[180px] md:w-[160px] md:h-[200px] lg:w-[176px] lg:h-[216px]',
+      'relative',
       'rounded-xl overflow-hidden',
       rotateClass,
       className ?? '',
-    ].join(' ')} style={style}>
+    ].join(' ')} style={{
+      width: 'clamp(110px, 11.8vw, 176px)',
+      height: 'clamp(130px, 13.6vw, 216px)',
+      ...(style ?? {}),
+    }}>
       {/* Outer white stroke outline fading toward bottom to match window card */}
       <div
         className="pointer-events-none absolute inset-0 rounded-xl z-10"
@@ -41,7 +45,7 @@ export default function PhotoCard({ src, alt = '', tilt = 'none', tiltStrength =
           fill
           priority={false}
           className="object-cover"
-          sizes="(max-width: 768px) 140px, 176px"
+          sizes="(max-width: 768px) 40vw, 176px"
         />
       </div>
     </div>
