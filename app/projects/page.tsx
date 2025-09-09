@@ -97,7 +97,7 @@ export default function ProjectsPage() {
                           controlsList="nodownload noplaybackrate noremoteplayback"
                           onLoadedData={(e) => { try { e.currentTarget.play(); } catch {} }}
                         >
-                          <source src="/photos/playcreate%20demo.mp4" type="video/mp4" />
+                          <source src="/photos/playcreate-demo.mp4" type="video/mp4" />
                         </video>
                       </div>
                     </div>
