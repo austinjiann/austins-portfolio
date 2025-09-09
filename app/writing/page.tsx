@@ -29,12 +29,10 @@ export const metadata: Metadata = {
 
 export default function WritingPage() {
   return (
-    <main className="relative w-full min-h-dvh">
-      <div className="fixed inset-x-0 top-0 z-20">
-        <NavBar />
-      </div>
+    <main className="relative w-full min-h-dvh grid grid-rows-[auto_1fr] overflow-hidden">
+      <NavBar />
 
-      <section className="min-h-dvh flex items-center">
+      <section className="min-h-0 flex items-center justify-center -mt-[36px]">
         <div className="w-full max-w-[1200px] mx-auto px-6 relative">
           {/* Center radial glow behind the window card */}
           <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
@@ -51,12 +49,15 @@ export default function WritingPage() {
             />
           </div>
           <div className="relative z-10">
-            <WindowCard maxWidthClass="max-w-card" contentClassName="py-6 px-6 sm:px-8 md:px-10 lg:px-12 h-[clamp(360px,38vw,460px)] flex items-center">
-              <div className="flex flex-col items-center justify-center h-full">
-                <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
+            <WindowCard maxWidthClass="max-w-card" contentClassName="py-6 px-6 sm:px-8 md:px-10 lg:px-12 h-[clamp(360px,38vw,460px)] flex items-center justify-center">
+              <div className="flex flex-col items-center justify-center h-full text-center">
+                <h1
+                  className="mx-auto w-full bg-gradient-to-br from-white via-[#D9D9D9] to-[#A7A7A7] bg-clip-text text-transparent font-medium tracking-tightest2"
+                  style={{ fontSize: 'clamp(30px, 5vw, 54px)' }}
+                >
                   Writing
                 </h1>
-                <p className="text-[#8B8B8B] text-lg">
+                <p className="text-[#8B8B8B] text-[15px] md:text-[16px] mt-3">
                   Coming soon...
                 </p>
               </div>

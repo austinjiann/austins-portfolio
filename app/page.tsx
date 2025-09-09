@@ -6,12 +6,10 @@ import HeroText from '@/components/HeroText';
 
 export default function AboutPage() {
   return (
-    <main className="relative w-full min-h-dvh">
-      <div className="fixed inset-x-0 top-0 z-20">
-        <NavBar />
-      </div>
+    <main className="relative w-full min-h-dvh grid grid-rows-[auto_1fr] overflow-hidden">
+      <NavBar />
 
-      <section className="min-h-dvh flex items-center">
+      <section className="min-h-0 flex items-center -mt-[36px]">
         <div className="w-full max-w-[1200px] mx-auto px-6 relative">
           {/* Center radial glow behind the window card */}
           <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">

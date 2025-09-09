@@ -27,29 +27,15 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="relative w-full min-h-dvh">
-      <div className="fixed inset-x-0 top-0 z-20">
-        <NavBar />
-      </div>
+    <main className="relative w-full min-h-dvh bg-black overflow-auto">
+      {/* Solid black page background to avoid vignette seams on this route */}
+      <div className="fixed inset-0 bg-black z-0 pointer-events-none" />
+      <NavBar />
 
-      <section className="min-h-dvh py-28">
+      <section className="relative z-10 min-h-dvh pt-16 pb-24">
         <div className="w-full max-w-[1200px] mx-auto px-6 relative">
-          {/* Center radial glow behind the window card */}
-          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-            <div
-              className="rounded-[44px]"
-              style={{
-                width: 'min(1400px, 98vw)',
-                height: 'min(780px, 76vh)',
-                background:
-                  'radial-gradient(820px 440px at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.14) 42%, rgba(255,255,255,0.06) 68%, rgba(255,255,255,0.0) 88%)',
-                opacity: 0.85,
-                filter: 'blur(16px)',
-              }}
-            />
-          </div>
           <div className="relative z-10 flex flex-col items-center gap-10">
-            <WindowCard maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
+            <WindowCard href="https://tryplaycreate.com/" radialWidth="clamp(130%, 180%, 220%)" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
                 <div className="sm:w-1/2 w-full">
                   <div className="w-full bg-black rounded-2xl overflow-hidden" style={{ height: 'clamp(180px, 24vw, 240px)' }}>
@@ -93,7 +79,7 @@ export default function ProjectsPage() {
                 </div>
               </div>
             </WindowCard>
-            <WindowCard maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
+            <WindowCard href="https://devpost.com/software/patchy" radialWidth="clamp(130%, 180%, 220%)" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
                 <div className="sm:w-1/2 w-full">
                   <div className="w-full bg-black rounded-2xl overflow-hidden" style={{ height: 'clamp(180px, 24vw, 240px)' }}>
@@ -130,7 +116,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <p className="text-gray-400 mb-4 leading-relaxed" style={{ fontSize: 'clamp(13px, 1.2vw, 16px)' }}>
-                    Patch all web security issues in your GitHub repo with the click of a button.<br />Won $1,500 at Hack the 6ix.
+                    AI agent to patch all web security issues in your GitHub repo with the click of a button.<br />Won $1,500 at Hack the 6ix.
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                   <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full" style={{ fontSize: 'clamp(11px, 1vw, 13px)' }}>Python</span>

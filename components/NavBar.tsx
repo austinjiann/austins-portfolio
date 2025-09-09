@@ -16,7 +16,7 @@ export default function NavBar() {
   const pathname = usePathname();
   
   return (
-    <header className="min-h-[72px]">
+    <header className="relative z-10 min-h-[72px]">
       <div className="w-full max-w-[1200px] mx-auto px-6 pt-5">
         <div className="grid grid-cols-[auto_1fr_auto] items-start gap-4">
           {/* Left: name + role */}

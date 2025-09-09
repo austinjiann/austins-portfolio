@@ -5,9 +5,12 @@ type WindowCardProps = PropsWithChildren<{
   className?: string;
   maxWidthClass?: string;
   contentClassName?: string;
+  href?: string;
+  openInNewTab?: boolean;
+  radialWidth?: string; // CSS width for the circular radial behind the card
 }>;
 
-export default function WindowCard({ className, maxWidthClass, contentClassName, children }: WindowCardProps) {
+export default function WindowCard({ className, maxWidthClass, contentClassName, href, openInNewTab = true, radialWidth, children }: WindowCardProps) {
   // Prevent repeated triggers by applying a cooldown after each animation
   const isOnCooldownRef = useRef(false);
   const cooldownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -22,6 +25,20 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
 
   return (
     <div className={["relative mx-auto w-full", maxWidthClass ?? 'max-w-card'].join(' ')}>
+      {/* Per-card radial glow behind card */}
+      <div className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center">
+        <div
+          className="rounded-full"
+          style={{
+            width: radialWidth ?? 'clamp(120%, 160%, 200%)',
+            aspectRatio: '1 / 1',
+            background:
+              'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.16) 36%, rgba(255,255,255,0.08) 56%, rgba(255,255,255,0.0) 78%)',
+            opacity: 0.68,
+            filter: 'blur(10px)'
+          }}
+        />
+      </div>
       {/* Thin backdrop behind the window card */}
       <div
         className="pointer-events-none absolute -inset-[6px] rounded-[28px] bg-[#35383D] backdrop-blur-[1px] -z-10"
@@ -29,12 +46,35 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
       />
 
       <div
+        role={href ? 'link' : undefined}
+        tabIndex={href ? 0 : -1}
+        onClick={(e) => {
+          if (!href) return;
+          const targetElement = e.target as HTMLElement;
+          if (targetElement.closest('a, button')) return;
+          if (openInNewTab) {
+            window.open(href, '_blank', 'noopener,noreferrer');
+          } else {
+            window.location.href = href;
+          }
+        }}
+        onKeyDown={(e) => {
+          if (!href) return;
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (openInNewTab) {
+              window.open(href, '_blank', 'noopener,noreferrer');
+            } else {
+              window.location.href = href;
+            }
+          }
+        }}
         onMouseEnter={(e) => {
           const shine = e.currentTarget.querySelector('.windowcard-shine') as HTMLElement | null;
           if (!shine) return;
           // Block while animating or during cooldown window
           if (shine.classList.contains('is-animating') || isOnCooldownRef.current) return;
-          // Start animation and immediately set cooldown; it will be released 5s after animation ends
+          // Start animation and immediately set cooldown; it will be released 10s after animation ends
           shine.classList.add('is-animating');
           isOnCooldownRef.current = true;
         }}
@@ -42,6 +82,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
           'relative rounded-3xl shadow-hero-outer overflow-hidden',
           // Background surface
           'bg-gradient-to-b from-[#0E0F10] to-[#121314]',
+          href ? 'cursor-pointer transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:-translate-y-1' : '',
           className ?? '',
         ].join(' ')}
       >
@@ -55,7 +96,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
           }
           cooldownTimeoutRef.current = setTimeout(() => {
             isOnCooldownRef.current = false;
-          }, 5000);
+          }, 10000);
         }}
       />
       {/* Fading outer white outline (stronger at top, fades towards bottom) */}
