@@ -82,7 +82,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
           'relative rounded-3xl shadow-hero-outer overflow-hidden',
           // Background surface
           'bg-gradient-to-b from-[#0E0F10] to-[#121314]',
-          href ? 'cursor-pointer transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:-translate-y-1' : '',
+          href ? 'cursor-pointer transition-transform duration-200 ease-out hover:-translate-y-1 focus-visible:-translate-y-1' : '',
           className ?? '',
         ].join(' ')}
       >

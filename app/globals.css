@@ -122,7 +122,7 @@ body {
 
 .windowcard-shine.is-animating {
   opacity: 1;
-  animation: shineSweep 1.6s ease-out 1;
+  animation: shineSweep 1.2s ease-out 1;
 }
 
 .windowcard-shine:not(.is-animating) {

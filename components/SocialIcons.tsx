@@ -11,16 +11,16 @@ export default function SocialIcons({ className }: SocialIconsProps) {
   const stroke = 2;
   return (
     <div className={"flex items-start gap-4 md:gap-4 lg:gap-5 leading-none " + (className ?? '')}>
-      <Link href="#" aria-label="GitHub" className={common}>
+      <Link href="https://github.com/austinjiann" aria-label="GitHub" className={common} target="_blank" rel="noopener noreferrer">
         <Github strokeWidth={stroke} className={iconClass} />
       </Link>
-      <Link href="#" aria-label="Twitter" className={common}>
+      <Link href="https://x.com/austinjian_" aria-label="Twitter" className={common} target="_blank" rel="noopener noreferrer">
         <Twitter strokeWidth={stroke} className={iconClass} />
       </Link>
-      <Link href="#" aria-label="LinkedIn" className={common}>
+      <Link href="https://www.linkedin.com/in/austin-jian" aria-label="LinkedIn" className={common} target="_blank" rel="noopener noreferrer">
         <Linkedin strokeWidth={stroke} className={iconClass} />
       </Link>
-      <Link href="#" aria-label="Mail" className={common}>
+      <Link href="mailto:austin.jian@uwaterloo.ca" aria-label="Email" className={common} target="_blank" rel="noopener noreferrer">
         <Mail strokeWidth={stroke} className={iconClass} />
       </Link>
     </div>

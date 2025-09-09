@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -84,6 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="relative min-h-dvh bg-vignette font-inter text-white/90 antialiased">
+        <GoogleAnalytics />
         <div className="top-radial-overlay z-40" />
         {children}
         {/* Webring widget pinned to bottom-right, aligned to page container */}
