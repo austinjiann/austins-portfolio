@@ -92,7 +92,6 @@ export default function ProjectsPage() {
                           loop
                           preload="auto"
                           playsInline
-                          poster="/photos/photo1.jpg"
                           disablePictureInPicture
                           controlsList="nodownload noplaybackrate noremoteplayback"
                         >
@@ -185,7 +184,6 @@ export default function ProjectsPage() {
                           loop
                           preload="auto"
                           playsInline
-                          poster="/photos/photo1.jpg"
                           disablePictureInPicture
                           controlsList="nodownload noplaybackrate noremoteplayback"
                         >
