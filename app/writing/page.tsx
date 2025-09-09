@@ -3,10 +3,10 @@ import NavBar from '@/components/NavBar';
 import WindowCard from '@/components/WindowCard';
 
 export const metadata: Metadata = {
-  title: 'Austin Jian - Writing',
+  title: 'Austin Jian',
   description: 'Essays and notes by Austin Jian on engineering, product, and learning.',
   openGraph: {
-    title: 'Austin Jian - Writing',
+    title: 'Austin Jian',
     description:
       'Austin written works',
     url: 'https://austinjian.ca/writing',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Austin Jian - Writing',
+    title: 'Austin Jian',
     description:
       'Essays and notes by Austin Jian on engineering, product, and learning.',
     images: ['/photos/photo1.jpg'],

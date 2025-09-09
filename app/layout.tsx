@@ -11,10 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://austinjian.ca'),
-  title: {
-    default: 'Austin Jian – Software Engineer',
-    template: '%s · Austin Jian',
-  },
+  title: 'Austin Jian',
   description:
     'Software engineer and builder.',
   keywords: [
@@ -69,10 +66,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
+      { url: '/photos/favicon.ico' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png' },
+      { url: '/photos/apple-touch-icon.png' },
     ],
   },
 };
