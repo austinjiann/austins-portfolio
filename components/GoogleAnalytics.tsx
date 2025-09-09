@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -23,7 +23,9 @@ export default function GoogleAnalytics() {
           gtag('config', '${GA_ID}', { anonymize_ip: true });
         `}
       </Script>
-      <PageViewTracker />
+      <Suspense fallback={null}>
+        <PageViewTracker />
+      </Suspense>
     </>
   );
 }
