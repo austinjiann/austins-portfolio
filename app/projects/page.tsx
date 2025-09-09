@@ -95,7 +95,6 @@ export default function ProjectsPage() {
                           poster="/photos/photo1.jpg"
                           disablePictureInPicture
                           controlsList="nodownload noplaybackrate noremoteplayback"
-                          onLoadedData={(e) => { try { e.currentTarget.play(); } catch {} }}
                         >
                           <source src="/photos/playcreate-demo.mp4" type="video/mp4" />
                         </video>
@@ -189,7 +188,6 @@ export default function ProjectsPage() {
                           poster="/photos/photo1.jpg"
                           disablePictureInPicture
                           controlsList="nodownload noplaybackrate noremoteplayback"
-                          onLoadedData={(e) => { try { e.currentTarget.play(); } catch {} }}
                         >
                           <source src="/photos/patchy.mp4" type="video/mp4" />
                         </video>
