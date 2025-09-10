@@ -32,8 +32,20 @@ export default function ProjectsPage() {
 
       <section className="relative z-10 min-h-dvh pt-16 pb-24">
         <div className="w-full max-w-[1200px] mx-auto px-6 relative">
-          {/* Fixed, viewport-centered radial glow to match About/Writing position */}
-          
+          {/* Center radial glow behind the window card (match About/Writing) */}
+          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+            <div
+              className="rounded-[44px]"
+              style={{
+                width: 'min(1400px, 98vw)',
+                height: 'min(780px, 76vh)',
+                background:
+                  'radial-gradient(820px 440px at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.14) 42%, rgba(255,255,255,0.06) 68%, rgba(255,255,255,0.0) 88%)',
+                opacity: 0.85,
+                filter: 'blur(16px)',
+              }}
+            />
+          </div>
           <div className="relative z-10 flex flex-col items-center gap-16">
             <div className="relative w-full">
               <div className="relative z-10">

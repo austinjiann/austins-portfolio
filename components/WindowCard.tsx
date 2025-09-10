@@ -25,6 +25,12 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
 
   return (
     <div className={["relative mx-auto w-full px-0 overflow-hidden md:overflow-visible", maxWidthClass ?? 'max-w-card'].join(' ')}>
+      {/* Subtle rectangular edge glow around the window card */}
+      <div
+        className="pointer-events-none absolute -inset-[10px] md:-inset-[12px] rounded-[36px] -z-20"
+        
+      />
+
       {/* Thin backdrop behind the window card */}
       <div
         className="pointer-events-none absolute inset-0 md:-inset-[6px] rounded-[28px] bg-[#35383D] backdrop-blur-[1px] -z-10"
