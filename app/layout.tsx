@@ -81,8 +81,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="relative min-h-dvh bg-vignette font-inter text-white/90 antialiased">
+    <html lang="en" className={inter.variable + ' overflow-x-hidden'}>
+      <body className="relative min-h-dvh bg-vignette font-inter text-white/90 antialiased overflow-x-hidden">
         <GoogleAnalytics />
         <div className="top-radial-overlay z-40" />
         {children}

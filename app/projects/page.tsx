@@ -27,58 +27,27 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="relative w-full min-h-dvh bg-black">
-      {/* Solid black page background to avoid vignette seams on this route */}
-      <div className="fixed inset-0 bg-black z-0 pointer-events-none" />
+    <main className="relative w-full min-h-dvh grid grid-rows-[auto_1fr]">
       <NavBar />
 
       <section className="relative z-10 min-h-dvh pt-16 pb-24">
         <div className="w-full max-w-[1200px] mx-auto px-6 relative">
+          {/* Center radial glow behind the window card to match About/Writing */}
+          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+            <div
+              className="rounded-[44px]"
+              style={{
+                width: 'min(1400px, 98vw)',
+                height: 'min(780px, 76vh)',
+                background:
+                  'radial-gradient(820px 440px at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.14) 42%, rgba(255,255,255,0.06) 68%, rgba(255,255,255,0.0) 88%)',
+                opacity: 0.85,
+                filter: 'blur(16px)',
+              }}
+            />
+          </div>
           <div className="relative z-10 flex flex-col items-center gap-16">
             <div className="relative w-full">
-              {/* Large per-card radial glow behind the window card */}
-              <div className="pointer-events-none absolute inset-0 z-0">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="rounded-[44px]"
-                    style={{
-                      width: 'min(1200px, 96vw)',
-                      height: 'min(640px, 60vh)',
-                      background:
-                        'radial-gradient(620px 440px at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.14) 42%, rgba(255,255,255,0.06) 68%, rgba(255,255,255,0.0) 88%)',
-                      opacity: 0.78,
-                      filter: 'blur(16px)'
-                    }}
-                  />
-                </div>
-                {/* Side boosts for more horizontal glow */}
-                <div className="absolute inset-y-0 left-0 right-auto flex items-center">
-                  <div
-                    className="rounded-full"
-                    style={{
-                      width: 'min(360px, 32vw)',
-                      height: 'min(440px, 42vh)',
-                      background:
-                        'radial-gradient(520px 320px at 0% 50%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.0) 82%)',
-                      opacity: 0.45,
-                      filter: 'blur(16px)'
-                    }}
-                  />
-                </div>
-                <div className="absolute inset-y-0 right-0 left-auto flex items-center justify-end">
-                  <div
-                    className="rounded-full"
-                    style={{
-                      width: 'min(360px, 32vw)',
-                      height: 'min(440px, 42vh)',
-                      background:
-                        'radial-gradient(520px 320px at 100% 50%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.0) 82%)',
-                      opacity: 0.45,
-                      filter: 'blur(16px)'
-                    }}
-                  />
-                </div>
-              </div>
               <div className="relative z-10">
                 <WindowCard href="https://tryplaycreate.com/" radialWidth="clamp(130%, 180%, 220%)" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
                   <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
@@ -128,49 +97,6 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="relative w-full">
-              {/* Large per-card radial glow behind the window card */}
-              <div className="pointer-events-none absolute inset-0 z-0">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="rounded-[44px]"
-                    style={{
-                      width: 'min(1200px, 96vw)',
-                      height: 'min(640px, 60vh)',
-                      background:
-                        'radial-gradient(620px 440px at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.14) 42%, rgba(255,255,255,0.06) 68%, rgba(255,255,255,0.0) 88%)',
-                      opacity: 0.7,
-                      filter: 'blur(16px)'
-                    }}
-                  />
-                </div>
-                {/* Side boosts for more horizontal glow */}
-                <div className="absolute inset-y-0 left-0 right-auto flex items-center">
-                  <div
-                    className="rounded-full"
-                    style={{
-                      width: 'min(360px, 32vw)',
-                      height: 'min(440px, 42vh)',
-                      background:
-                        'radial-gradient(520px 320px at 0% 50%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.0) 82%)',
-                      opacity: 0.45,
-                      filter: 'blur(16px)'
-                    }}
-                  />
-                </div>
-                <div className="absolute inset-y-0 right-0 left-auto flex items-center justify-end">
-                  <div
-                    className="rounded-full"
-                    style={{
-                      width: 'min(360px, 32vw)',
-                      height: 'min(440px, 42vh)',
-                      background:
-                        'radial-gradient(520px 320px at 100% 50%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.0) 82%)',
-                      opacity: 0.45,
-                      filter: 'blur(16px)'
-                    }}
-                  />
-                </div>
-              </div>
               <div className="relative z-10">
                 <WindowCard href="https://devpost.com/software/patchy" radialWidth="clamp(130%, 180%, 220%)" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
                   <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
