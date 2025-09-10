@@ -25,20 +25,6 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
 
   return (
     <div className={["relative mx-auto w-full px-0 overflow-hidden md:overflow-visible", maxWidthClass ?? 'max-w-card'].join(' ')}>
-      {/* Per-card radial glow behind card */}
-      <div className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center">
-        <div
-          className="rounded-full"
-          style={{
-            width: radialWidth ?? 'clamp(120%, 160%, 200%)',
-            aspectRatio: '1 / 1',
-            background:
-              'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.16) 36%, rgba(255,255,255,0.08) 56%, rgba(255,255,255,0.0) 78%)',
-            opacity: 0.68,
-            filter: 'blur(10px)'
-          }}
-        />
-      </div>
       {/* Thin backdrop behind the window card */}
       <div
         className="pointer-events-none absolute inset-0 md:-inset-[6px] rounded-[28px] bg-[#35383D] backdrop-blur-[1px] -z-10"
@@ -118,7 +104,6 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
           height: 'clamp(28px, 7vw, 38px)',
           background:
             [
-              // Brighter silver center with slightly brighter silver edges
               'linear-gradient(90deg, rgba(98,98,98,0.62) 0%, rgba(122,122,122,0.48) 16%, rgba(212,212,212,0.80) 50%, rgba(122,122,122,0.48) 84%, rgba(98,98,98,0.62) 100%)',
               'radial-gradient(600px 240px at 50% 0%, rgba(200,200,200,0.18) 0%, rgba(185,185,185,0.10) 42%, rgba(0,0,0,0.0) 70%)',
               'linear-gradient(to bottom, rgba(185,185,185,0.22), rgba(0,0,0,0.0) 56%)',
@@ -131,6 +116,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
             'linear-gradient(to bottom, rgba(0,0,0,1) 96%, rgba(0,0,0,0) 100%)',
         }}
       />
+      
       {/* Slim title bar with traffic lights */}
       <div className="relative z-10 px-4 pt-3 md:pt-4">
         <div className="flex items-center gap-2.5">

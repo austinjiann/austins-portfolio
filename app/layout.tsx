@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import TopRadialOverlay from '@/components/TopRadialOverlay';
 import SocialIcons from '@/components/SocialIcons';
 
 const inter = Inter({
@@ -84,7 +85,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable + ' overflow-x-hidden scroll-smooth'}>
       <body className="relative min-h-dvh bg-vignette font-inter text-white/90 antialiased overflow-x-hidden overscroll-y-contain touch-pan-y">
         <GoogleAnalytics />
-        <div className="top-radial-overlay z-40" />
+        <TopRadialOverlay />
         {children}
         {/* Webring widget: fixed on desktop, inline at page bottom on mobile */}
         <div className="relative mt-0 md:mt-0 md:fixed md:inset-x-0 md:bottom-4 z-40 pointer-events-none">
