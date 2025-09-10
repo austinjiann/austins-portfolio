@@ -24,7 +24,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
   }, []);
 
   return (
-    <div className={["relative mx-auto w-full", maxWidthClass ?? 'max-w-card'].join(' ')}>
+    <div className={["relative mx-auto w-full px-0", maxWidthClass ?? 'max-w-card'].join(' ')}>
       {/* Per-card radial glow behind card */}
       <div className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center">
         <div
@@ -70,11 +70,11 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
           }
         }}
         onMouseEnter={(e) => {
+          // Disable shine animation on small screens where hover is not meaningful
+          if (typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) return;
           const shine = e.currentTarget.querySelector('.windowcard-shine') as HTMLElement | null;
           if (!shine) return;
-          // Block while animating or during cooldown window
           if (shine.classList.contains('is-animating') || isOnCooldownRef.current) return;
-          // Start animation and immediately set cooldown; it will be released 10s after animation ends
           shine.classList.add('is-animating');
           isOnCooldownRef.current = true;
         }}
@@ -82,13 +82,14 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
           'relative rounded-3xl shadow-hero-outer overflow-hidden',
           // Background surface
           'bg-gradient-to-b from-[#0E0F10] to-[#121314]',
-          href ? 'cursor-pointer transition-transform duration-200 ease-out hover:-translate-y-1 focus-visible:-translate-y-1' : '',
+          // Only allow hover lift at medium+ screens
+          href ? 'cursor-pointer md:transition-transform md:duration-200 md:ease-out md:hover:-translate-y-1 focus-visible:-translate-y-1' : '',
           className ?? '',
         ].join(' ')}
       >
-      {/* Sweep shine animation overlay (triggered on hover) */}
+      {/* Sweep shine animation overlay (triggered on hover, hidden on mobile) */}
       <div
-        className="windowcard-shine z-20 rounded-[40px]"
+        className="windowcard-shine z-20 rounded-[40px] hidden md:block"
         onAnimationEnd={(e) => {
           e.currentTarget.classList.remove('is-animating');
           if (cooldownTimeoutRef.current) {
@@ -114,7 +115,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
       <div
         className="pointer-events-none absolute inset-x-0 top-0 z-0"
         style={{
-          height: 'clamp(20px, 4vw, 38px)',
+          height: 'clamp(28px, 7vw, 38px)',
           background:
             [
               // Brighter silver center with slightly brighter silver edges
@@ -131,7 +132,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
         }}
       />
       {/* Slim title bar with traffic lights */}
-      <div className="relative z-10 px-4 pt-4">
+      <div className="relative z-10 px-4 pt-3 md:pt-4">
         <div className="flex items-center gap-2.5">
           <span className="h-2 w-2 rounded-full" style={{ backgroundColor: '#FF5F57' }} />
           <span className="h-2 w-2 rounded-full" style={{ backgroundColor: '#FEBC2E' }} />
@@ -140,12 +141,12 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
       </div>
 
       {/* Inner bezel line */}
-      <div className="relative z-10 mt-3 mx-0 border-t border-white/12 rounded-none" />
+      <div className="relative z-10 mt-2 md:mt-3 mx-0 border-t border-white/12 rounded-none" />
 
         {/* Content */}
         <div className={[
           'relative z-10',
-          contentClassName ?? 'pt-9 pb-12 px-6 sm:px-8 md:px-10 lg:px-12 min-h-[380px] md:min-h-[440px] lg:min-h-[480px]'
+          contentClassName ?? 'pt-7 md:pt-9 pb-10 md:pb-12 px-5 sm:px-8 md:px-10 lg:px-12 min-h-[360px] md:min-h-[440px] lg:min-h-[480px]'
         ].join(' ')}>
           {children}
         </div>

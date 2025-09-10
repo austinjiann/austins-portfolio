@@ -13,11 +13,11 @@ const LINKS = {
 
 export default function HeroText() {
   return (
-    <div className="flex flex-col items-start gap-6">
+    <div className="flex flex-col items-start gap-5 md:gap-6">
       {/* Headline */}
       <div className="w-full">
-        <h1 className="mx-auto w-full text-left text-balance bg-gradient-to-br from-white via-[#D9D9D9] to-[#A7A7A7] bg-clip-text text-transparent leading-[1.08] md:leading-[1.07] lg:leading-[1.06] font-medium tracking-tightest2 max-w-[48ch] md:max-w-[44ch] lg:max-w-[42ch]"
-          style={{ fontSize: 'clamp(30px, 5vw, 54px)' }}>
+        <h1 className="mx-auto w-full text-left text-balance bg-gradient-to-br from-white via-[#D9D9D9] to-[#A7A7A7] bg-clip-text text-transparent leading-[1.1] md:leading-[1.07] lg:leading-[1.06] font-medium tracking-tightest2 max-w-[48ch] md:max-w-[44ch] lg:max-w-[42ch]"
+          style={{ fontSize: 'clamp(24px, 4.2vw, 54px)' }}>
           I build cool things
           <br />
           and post on social media
@@ -25,9 +25,26 @@ export default function HeroText() {
       </div>
 
       {/* Description */}
-      <div className="w-full relative" style={{ paddingLeft: 'clamp(7rem, 24vw, 22rem)' }}>
-        {/* Photo cards cluster positioned to the left of details */}
-        <div className="absolute left-0 top-2 -translate-x-[26%] sm:-translate-x-[22%] md:-translate-x-[18%] lg:-translate-x-[16%] xl:-translate-x-[14%] 2xl:-translate-x-[12%] translate-y-[2px] sm:translate-y-[6px] md:translate-y-[10px] lg:translate-y-[14px] xl:translate-y-[18px] h-[220px] md:h-[260px] w-[340px] pointer-events-none">
+      <div className="w-full relative md:pl-[18rem] lg:pl-[22rem]">
+        {/* Mobile photo cards: stacked inline variant */}
+        <div className="md:hidden mb-4 flex items-end justify-center gap-2.5">
+          <PhotoCard
+            src="/photos/photo1.jpg"
+            alt="Photo 1"
+            tilt="left"
+            tiltStrength="strong"
+            style={{ width: 84, height: 110 }}
+          />
+          <PhotoCard
+            src="/photos/photo2.png"
+            alt="Photo 2"
+            tilt="right"
+            tiltStrength="max"
+            style={{ width: 88, height: 118 }}
+          />
+        </div>
+        {/* Photo cards cluster positioned to the left of details (hide on mobile) */}
+        <div className="hidden md:block absolute left-0 top-2 -translate-x-[26%] sm:-translate-x-[22%] md:-translate-x-[18%] lg:-translate-x-[16%] xl:-translate-x-[14%] 2xl:-translate-x-[12%] translate-y-[2px] sm:translate-y-[6px] md:translate-y-[10px] lg:translate-y-[14px] xl:translate-y-[18px] h-[220px] md:h-[260px] w-[340px] pointer-events-none">
           {/* Base (1920x1080) and MacBook 14" tuned positions via clamp + responsive tweaks */}
           <PhotoCard
             src="/photos/photo1.jpg"
@@ -56,13 +73,13 @@ export default function HeroText() {
             }}
           />
         </div>
-        <p className="text-left mt-2 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white font-semibold">
+        <p className="text-left mt-1.5 md:mt-2 text-[15px] sm:text-[17px] md:text-[20px] lg:text-[22px] text-white font-semibold">
           cs @ <a href={LINKS.waterloo} target="_blank" rel="noopener noreferrer" className="link-underline">university of waterloo</a>
         </p>
-        <p className="text-left mt-4 text-[13px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
+        <p className="text-left mt-3.5 md:mt-4 text-[12.5px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
           cofounder @<a href={LINKS.playcreate} target="_blank" rel="noopener noreferrer" className="link-underline">PlayCreate</a>, swe @<a href={LINKS.goplace} target="_blank" rel="noopener noreferrer" className="link-underline">Go Place</a>
         </p>
-        <p className="text-left mt-4 text-[13px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
+        <p className="text-left mt-3.5 md:mt-4 text-[12.5px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
           what I've done recently...
         </p>
         <p className="text-left mt-4 text-[13px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">

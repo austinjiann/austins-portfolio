@@ -1,0 +1,33 @@
+---
+description: Mobile-only styling policy; do not change desktop (md+)
+globs:
+  - "**/*.tsx"
+  - "**/*.ts"
+  - "**/*.css"
+alwaysApply: true
+---
+
+# Mobile-only guideline
+
+- **Scope**: Apply style/layout changes only for mobile screens (<768px). Desktop and larger breakpoints (md, lg, xl, 2xl) must remain visually unchanged.
+- **Do not modify** any existing `md:`, `lg:`, `xl:`, or `2xl:` Tailwind classes unless the task explicitly authorizes desktop changes.
+- **Mobile-first edits**: Prefer base (unprefixed) classes and `sm:` only. If a base-class change would alter desktop, explicitly restore desktop with an `md:` override, e.g. `px-4 md:px-10` instead of editing `md:px-10`.
+- **Visibility**: Use `block md:hidden` for mobile-only blocks and `hidden md:block` for desktop-only blocks. Do not change the desktop block’s styles.
+- **Typography & media**: Adjust sizes with base/sm values and keep desktop via existing `md:` tokens or add `md:text-[…]`, `md:w-…`, etc. Avoid touching `max-w-card` or desktop container widths.
+- **Layout tokens**: Do not change desktop width tokens or page containers (`max-w-card`, `max-w-[1200px]`, `mx-auto`, desktop paddings/margins).
+- **Global styles**: Avoid global changes that would affect md+ (e.g., variables, base element selectors). Restrict CSS to mobile with media queries `@media (max-width: 767px)` when necessary.
+
+Example patterns
+
+```tsx
+// Good: mobile-only adjustment with desktop preserved
+<div className="px-5 md:px-10 py-5 md:py-8 text-[15px] md:text-[20px]" />
+
+// Good: mobile-only visibility swap
+<MobileBlock className="block md:hidden" />
+<DesktopBlock className="hidden md:block" />
+
+// Avoid: editing md+ classes without explicit approval
+// <div className="md:px-8"> → changed to md:px-6 (NOT allowed)
+```
+
