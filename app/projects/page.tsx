@@ -33,7 +33,7 @@ export default function ProjectsPage() {
       <section className="relative z-10 min-h-dvh pt-16 pb-24">
         <div className="w-full max-w-[1200px] mx-auto px-6 relative">
           {/* Center radial glow behind the window card to match About/Writing */}
-          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+          <div className="pointer-events-none absolute inset-x-0 top-0 bottom-0 z-0 flex items-center justify-center">
             <div
               className="rounded-[44px]"
               style={{
@@ -49,7 +49,7 @@ export default function ProjectsPage() {
           <div className="relative z-10 flex flex-col items-center gap-16">
             <div className="relative w-full">
               <div className="relative z-10">
-                <WindowCard href="https://tryplaycreate.com/" radialWidth="clamp(130%, 180%, 220%)" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
+                <WindowCard href="https://tryplaycreate.com/" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
                   <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
                     <div className="sm:w-1/2 w-full">
                       <div className="w-full bg-black rounded-2xl overflow-hidden" style={{ height: 'clamp(180px, 24vw, 240px)' }}>
@@ -98,7 +98,7 @@ export default function ProjectsPage() {
             </div>
             <div className="relative w-full">
               <div className="relative z-10">
-                <WindowCard href="https://devpost.com/software/patchy" radialWidth="clamp(130%, 180%, 220%)" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
+                <WindowCard href="https://devpost.com/software/patchy" maxWidthClass="max-w-card" contentClassName="py-6 px-6 min-h-[340px] flex items-center">
                   <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
                     <div className="sm:w-1/2 w-full">
                       <div className="w-full bg-black rounded-2xl overflow-hidden" style={{ height: 'clamp(180px, 24vw, 240px)' }}>

@@ -68,8 +68,8 @@ export default function NavBar() {
             </div>
           </nav>
 
-          {/* Right: social icons */}
-          <div className="hidden md:block shrink-0 relative top-[clamp(2px,0.5vw,14px)] justify-self-end">
+          {/* Right: social icons (aligned with navbar on desktop) */}
+          <div className="hidden md:block shrink-0 self-center justify-self-end">
             <SocialIcons />
           </div>
         </div>
