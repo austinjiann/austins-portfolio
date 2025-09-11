@@ -5,6 +5,10 @@ import WindowCard from '@/components/WindowCard';
 export const metadata: Metadata = {
   title: 'Austin Jian',
   description: 'Projects and experiments by Austin Jian: demos, prototypes, and shipped work.',
+  icons: {
+    icon: [{ url: '/photos/favicon.ico' }],
+    apple: [{ url: '/photos/apple-touch-icon.png' }],
+  },
   openGraph: {
     title: 'Austin Jian',
     description: 'Projects and experiments by Austin Jian: demos, prototypes, and shipped work.',
