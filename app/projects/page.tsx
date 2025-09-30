@@ -86,7 +86,7 @@ export default function ProjectsPage() {
                         </div>
                       </div>
                       <p className="text-gray-400 mb-4 leading-relaxed" style={{ fontSize: 'clamp(13px, 1.2vw, 16px)' }}>
-                        Traditional tactic boards reinvented with AI.<br />4 million views, working with Canada's biggest basketball clubs.
+                        Traditional tactic boards reinvented with AI.<br />7 million views, working with Canada's biggest basketball clubs.
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full" style={{ fontSize: 'clamp(11px, 1vw, 13px)' }}>React</span>

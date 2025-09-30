@@ -83,7 +83,7 @@ export default function HeroText() {
           what I've done recently...
         </p>
         <p className="text-left mt-4 text-[13px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
-          • Building <a href={LINKS.playcreate} target="_blank" rel="noopener noreferrer" className="link-underline">PlayCreate</a> (4 million views)<br />
+          • Building <a href={LINKS.playcreate} target="_blank" rel="noopener noreferrer" className="link-underline">PlayCreate</a> (7 million views)<br />
           • SWE @<a href={LINKS.cyc} target="_blank" rel="noopener noreferrer" className="link-underline">Canadian Youth Champions</a><br />
           • Won $1,500 at <a href={LINKS.hackThe6ix} target="_blank" rel="noopener noreferrer" className="link-underline">Hack the 6ix</a><br />
           • Won first place and $1,000 at <a href={LINKS.hack404} target="_blank" rel="noopener noreferrer" className="link-underline">Hack404</a><br />
