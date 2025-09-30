@@ -24,7 +24,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
   }, []);
 
   return (
-    <div className={["relative mx-auto w-full px-0 overflow-hidden md:overflow-visible", maxWidthClass ?? 'max-w-card'].join(' ')}>
+    <div className={["relative mx-auto w-full px-0 overflow-hidden md:overflow-visible rounded-3xl", maxWidthClass ?? 'max-w-card'].join(' ')}>
       {/* Subtle rectangular edge glow around the window card */}
       <div
         className="pointer-events-none absolute -inset-[10px] md:-inset-[12px] rounded-[36px] -z-20"
@@ -33,7 +33,7 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
 
       {/* Thin backdrop behind the window card */}
       <div
-        className="pointer-events-none absolute inset-0 md:-inset-[6px] rounded-[28px] bg-[#35383D] backdrop-blur-[1px] -z-10"
+        className="pointer-events-none absolute inset-0 md:-inset-[6px] rounded-[28px] md:bg-[#35383D] md:backdrop-blur-[1px] -z-10"
         style={{ boxShadow: '0 0 0 1px rgba(255, 255, 255, 0.10) inset' }}
       />
 
@@ -146,4 +146,3 @@ export default function WindowCard({ className, maxWidthClass, contentClassName,
     </div>
   );
 }
-
