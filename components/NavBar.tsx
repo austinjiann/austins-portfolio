@@ -16,7 +16,7 @@ export default function NavBar() {
   
   return (
     <header className="relative z-10 min-h-[68px] md:min-h-[72px]">
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-4 md:pt-5 translate-x-[10px] md:translate-x-0">
+      <div className="w-full max-w-[1200px] mx-auto px-6 pt-4 md:pt-5 translate-x-[20px] md:translate-x-0">
         {/* Single-row layout on mobile to match desktop structure */}
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-3 md:gap-x-4">
           {/* Left: name + role */}
