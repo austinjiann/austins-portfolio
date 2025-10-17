@@ -9,7 +9,6 @@ const MDiv: any = motion.div;
 const pills = [
   { label: 'About', href: '/' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Writing', href: '/writing' },
 ];
 
 export default function NavBar() {
@@ -32,9 +31,9 @@ export default function NavBar() {
 
           {/* Center: pills */}
           <nav className="flex-1 flex justify-center">
-            <div className="relative -mx-2 sm:mx-0 w-full max-w-[255px] md:max-w-[320px] px-2 sm:px-0">
+            <div className="relative -mx-2 sm:mx-0 w-full max-w-[180px] md:max-w-[200px] px-2 sm:px-0">
               {/* Group container: rounded rectangle with subtle border and backdrop */}
-              <div className="mx-auto w-full max-w-[255px] md:max-w-[320px] rounded-full bg-black/10 backdrop-blur-[2px] ring-1 ring-white/25">
+              <div className="mx-auto w-full max-w-[180px] md:max-w-[200px] rounded-full bg-black/10 backdrop-blur-[2px] ring-1 ring-white/25">
                 <div className="relative flex justify-center gap-1.5 px-1.5 py-1.5 overflow-x-auto scrollbar-none">
                   <LayoutGroup id="navbar">
                     {pills.map((pill) => {
