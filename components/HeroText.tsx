@@ -83,11 +83,9 @@ export default function HeroText() {
           what I've done recently...
         </p>
         <p className="text-left mt-4 text-[13px] sm:text-[14px] md:text-[15px] text-[#8B8B8B]">
-          • Won $1,500 at <a href={LINKS.hackThe6ix} target="_blank" rel="noopener noreferrer" className="link-underline">Hack the 6ix</a><br />
-          • Won 1st place at <a href={LINKS.cyc} target="_blank" rel="noopener noreferrer" className="link-underline">Hack the Valley</a><br />
-          • Building <a href={LINKS.playcreate} target="_blank" rel="noopener noreferrer" className="link-underline">PlayCreate</a> (8 million views)<br />
-          • Won first place and $1,000 at <a href={LINKS.hack404} target="_blank" rel="noopener noreferrer" className="link-underline">Hack404</a><br />
-          
+        • Built <a href={LINKS.playcreate} target="_blank" rel="noopener noreferrer" className="link-underline">PlayCreate</a><br />
+          • Winner @ <a href={LINKS.hackThe6ix} target="_blank" rel="noopener noreferrer" className="link-underline">Hack the 6ix</a><br />
+          • Won 1st in <a href={LINKS.cyc} target="_blank" rel="noopener noreferrer" className="link-underline">Hack the Valley</a> & <a href={LINKS.hack404} target="_blank" rel="noopener noreferrer" className="link-underline">Hack404</a><br />
         </p>
       </div>
     </div>

@@ -72,7 +72,7 @@ export default function ProjectsPage() {
                         </div>
                       </div>
                       <p className="text-gray-400 mb-4 leading-relaxed" style={{ fontSize: 'clamp(13px, 1.2vw, 16px)' }}>
-                        Coaching boards reinvented with AI.<br />8 million views on social media, 1000+ users, working with basketball clubs.
+                        Coaching boards reinvented with AI.<br />8 million views on social media, 1000+ users, working with 4 Canadian basketball clubs.
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full" style={{ fontSize: 'clamp(11px, 1vw, 13px)' }}>React</span>
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
                          </div>
                        </div>
                        <p className="text-gray-400 mb-4 leading-relaxed" style={{ fontSize: 'clamp(13px, 1.2vw, 16px)' }}>
-                        Turret with a mounted water gun that tracks and automatically hydrates multiple plants based on moisture levels and positioning.
+                        Turret with a mounted water gun that tracks and automatically hydrates multiple plants based on moisture levels and positioning.<br />1st place winner at Hack the Valley.
                        </p>
                        <div className="flex flex-wrap gap-1.5">
                          <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full" style={{ fontSize: 'clamp(11px, 1vw, 13px)' }}>C++</span>
@@ -175,7 +175,7 @@ export default function ProjectsPage() {
                         </div>
                       </div>
                       <p className="text-gray-400 mb-4 leading-relaxed" style={{ fontSize: 'clamp(13px, 1.2vw, 16px)' }}>
-                        AI agent to patch all web security issues in your GitHub repo with the click of a button.<br />Won $1,500 at Hack the 6ix.
+                        AI agent to patch all web security issues in your GitHub repo with the click of a button.<br />Hack the 6ix winner.
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                       <span className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full" style={{ fontSize: 'clamp(11px, 1vw, 13px)' }}>Python</span>
